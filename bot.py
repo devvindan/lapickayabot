@@ -96,6 +96,10 @@ class LapickayaBot:
     def message_handler(self, bot, update):
         user_id = update.message.chat_id
         if user_id in self.users:
+            if update.message.text.lower() == "сдаюсь":
+                del self.users[user_id]
+                bot.send_message(chat_id=user_id, text="Увидимся на пересдаче!")
+                return
             last = self.users[user_id]["last"]
             if self.definitions[last].lower() == update.message.text.lower():
                 bot.send_message(chat_id=user_id, text="Правильно!")
