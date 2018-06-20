@@ -115,7 +115,7 @@ class LapickayaBot:
             bot.send_message(chat_id=user_id, text=
             "Вопросов осталось: {}\n{}?".format(len(self.users[user_id]["questions"]) + 1, new))
         else:
-            bot.send_message(chat_id=update.message.chat_id, text="Не понимаю вас... Попробуйте /help")
+            bot.send_message(chat_id=update.message.chat_id, text="Не понимаю вас, на пересдачу. [/help]")
 
 
 
